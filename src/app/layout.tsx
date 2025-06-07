@@ -1,10 +1,8 @@
-import { metadata } from './metadata';
-import { Toaster } from 'sonner';
-import { ThemeProvider } from 'next-themes'
 import '@/styles/globals.css';
-import { MainLayout } from '@/components/layouts/MainLayout';
+import { Providers } from '@/providers';
+import { metadata } from './metadata';
 
-export { metadata };  
+export { metadata };
 
 export default function RootLayout({
   children,
@@ -14,12 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class">
-          <MainLayout>
-            {children}
-          </MainLayout>
-        </ThemeProvider>
-        <Toaster />
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -1,22 +1,22 @@
 import '@/styles/globals.css';
 import ClientLayout from '@/components/ClientLayout';
 import { metadata } from '@/app/metadata';
-import { Providers } from '@/providers';
+import React from 'react';
 
 export { metadata };
 
-export default function RootLayout({
-  children,
-}: {
+interface MainLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Providers>
-          <ClientLayout>{children}</ClientLayout>
-        </Providers>
-      </body>
-    </html>
+    <div className="min-h-screen bg-background">
+      <ClientLayout>
+        <div className="lg:pl-0">
+          {children}
+        </div>
+      </ClientLayout>
+    </div>
   );
 }

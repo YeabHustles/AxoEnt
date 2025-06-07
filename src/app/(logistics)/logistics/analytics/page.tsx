@@ -30,7 +30,7 @@ import {
   Zap,
   Shield,
   Award,
-  TrendingRight
+  ArrowRight
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
@@ -172,7 +172,7 @@ const getTrendIcon = (trend: string) => {
   switch (trend) {
     case 'up': return TrendingUp;
     case 'down': return TrendingDown;
-    default: return TrendingRight;
+    default: return ArrowRight;
   }
 };
 
@@ -728,5 +728,4 @@ export default function LogisticsAnalyticsPage() {
       </Tabs>
     </div>
   );
-} 
 } 
